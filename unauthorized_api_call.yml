@@ -1,0 +1,16 @@
+title: AWS Unauthorized API Call
+status: experimental
+description: Detects unauthorixed API calls in CloudTrail logs which may indicate compromised credentials or privilege escalation
+author: Nick Langevin
+date: 2026/03/13
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    selection:
+        errorCode: AccessDenied
+    condition: selection
+level: medium
+tags:
+    - attack.discovery
+    - attack.t1087

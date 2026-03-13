@@ -1,0 +1,16 @@
+title: AWS IAM User Created
+status: experimental
+description: Detects creation of new IAM users which could indicate persistence by an attacker establishing backdoor access
+author: Nick Langevin
+date: 2026/03/13
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    selection:
+        eventName: CreateUser
+    condition: selection
+level: high
+tags:
+    - attack.persistence
+    - attack.t1136.003
