@@ -1,0 +1,16 @@
+title: S3 Bulk Object Download
+status: experimental
+description: Detects GetObject API calls against S3 buckets which may indicate data exfiltration when correlated with unusual volume or unauthorized principals.
+author: Nick Langevin
+date: 2026/03/13
+logsource:
+    product: aws
+    service: cloudtrail
+detection: 
+    selection:
+        eventName: GetObject        
+    condition: selection
+level: medium
+tags:
+  - attack.t1530
+  

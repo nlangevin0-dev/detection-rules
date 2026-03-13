@@ -1,0 +1,19 @@
+title: CloudTrail Stop Logging
+status: experimental
+description: Detects if an AWS account is making StopLogging and DeleteTrail API calls
+author: Nick Langevin
+date: 2026/03/13
+logsource:
+    product: aws
+    service: cloudtrail
+detection: 
+    selection:
+        eventName: 
+            - StopLogging
+            - DeleteTrail        
+    condition: selection
+level: critical
+tags:
+  - attack.t1562.008
+  
+
