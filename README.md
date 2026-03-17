@@ -22,9 +22,3 @@ sigma convert -t splunk --without-pipeline unauthorized_api_call.yml
 - sigma-cli
 - pySigma-backend-splunk
 ```
-
-Push it:
-```
-git add README.md
-git commit -m "Add README"
-git push
